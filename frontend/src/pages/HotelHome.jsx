@@ -29,7 +29,11 @@ const HotelHome = () => {
   
 
   return (
+    
     <div className='container-fluid m-1'>
+      <div>
+      <Navbar/>
+      </div>
         <div className='mt-3 fs-4'><marquee behavior="scroll" direction="left">This is Hotel TAE Dashboard by using which you can manage orders add or delete dishes to menu.</marquee></div>
         <div className='row gap-1 m-1'>
           <div className='col-2 bg-succes btn-group-vertical position-sticky top-0' style={{ height: '40vh', position: 'sticky', top: '0' }}>

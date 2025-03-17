@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config'
 
 const AllDishes = () => {
   const [dishes, setDishes] = useState([]);
@@ -7,7 +8,7 @@ const AllDishes = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-dishes'); 
+        const response = await axios.get(`${API_BASE_URL}/get-dishes`); 
         setDishes(response.data); 
         console.error('Error fetching dishes:', error);
       }catch(err){
@@ -20,7 +21,7 @@ const AllDishes = () => {
 
   const handleDelete = async (dishId) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-dish/${dishId}`);
+      await axios.delete(`${API_BASE_URL}/delete-dish/${dishId}`);
       setDishes(dishes.filter(dish => dish._id !== dishId));
       alert('Dish deleted successfully');
     } catch (error) {

@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import Navbar from '../components/Navbar'
 import UserDish from '../components/UserDish'
 import axios from 'axios'
+import { API_BASE_URL } from '../config'
  
 const Menu = () => {
   var tab = localStorage.getItem('Table No')
@@ -16,7 +17,7 @@ const Menu = () => {
   useEffect(() => {
     const fetchDishes = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-dishes');
+        const response = await axios.get(`${API_BASE_URL}/get-dishes`);
         setDishes(response.data);
       } catch (error) {
         console.error('Error fetching dishes:', error);

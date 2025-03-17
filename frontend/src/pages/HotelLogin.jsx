@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { API_BASE_URL } from '../config'
 
 const HotelLogin = () => {
   const [email, setEmail] = useState('')
@@ -23,7 +24,7 @@ const HotelLogin = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5000/hotel-login', {
+      const response = await fetch(`${API_BASE_URL}/hotel-login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

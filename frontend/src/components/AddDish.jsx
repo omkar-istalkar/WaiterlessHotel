@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../config'
 
 const AddDish = () => {
   const [dname, setdname] = useState('');
@@ -31,7 +32,7 @@ const AddDish = () => {
     formData.append('IsSpeciality', speciality);
 
     try {
-      const res = await axios.post('http://localhost:5000/add-dish', formData, {
+      const res = await axios.post(`${API_BASE_URL}/add-dish`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
