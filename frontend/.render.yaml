@@ -1,6 +1,0 @@
-services:
-  - type: web
-    name: waiterlesshotel-frontend
-    env: node
-    buildCommand: npm install && npm run build
-    startCommand: npm run start
